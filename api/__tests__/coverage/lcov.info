@@ -1,5 +1,5 @@
 TN:
-SF:/home/cgama/workspace/JavaScript/app-auth-tdd/src/app/controllers/User.js
+SF:/home/cgama/workspace/JavaScript/app-auth-tdd/api/src/app/controllers/User.js
 FN:5,(anonymous_0)
 FNF:1
 FNH:1
@@ -23,7 +23,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:/home/cgama/workspace/JavaScript/app-auth-tdd/src/app/middlewares/auth.js
+SF:/home/cgama/workspace/JavaScript/app-auth-tdd/api/src/app/middlewares/auth.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:1
@@ -46,7 +46,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/home/cgama/workspace/JavaScript/app-auth-tdd/src/app/models/User.js
+SF:/home/cgama/workspace/JavaScript/app-auth-tdd/api/src/app/models/User.js
 FN:4,(anonymous_0)
 FN:15,(anonymous_1)
 FN:23,(anonymous_2)
@@ -76,7 +76,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:/home/cgama/workspace/JavaScript/app-auth-tdd/src/app/models/index.js
+SF:/home/cgama/workspace/JavaScript/app-auth-tdd/api/src/app/models/index.js
 FN:14,(anonymous_0)
 FN:17,(anonymous_1)
 FN:22,(anonymous_2)
