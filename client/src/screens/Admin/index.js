@@ -1,8 +1,16 @@
 import React from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 const Admin = (props) => {
-    console.log(props)
+    if (!props.auth.isAuth) {
+        return <Redirect to='/login' />
+    }
+
+    if (props.auth.isAuth && props.auth.user.role !== 'admin') {
+        return <Redirect to='/user' />
+    }
+
     return (
         <div>
             <div>
@@ -19,4 +27,10 @@ const Admin = (props) => {
     )
 }
 
-export default Admin
+const mapStateToProps = state => {
+    return {
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps)(Admin)

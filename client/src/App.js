@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import jwtDecoded from 'jwt-decode'
+import store from './redux/index'
+import { Provider } from 'react-redux'
+import Public from './screens/Public';
+import Header from './Header'
+import Admin from './screens/Admin'
+import Restrito from './screens/Restrito'
+import Login from './screens/Public/Login'
+import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom'
+
 class App extends Component {
-
-  async componentDidMount() {
-    let token = localStorage.getItem('token-auth')
-
-    if (!token) {
-
-      const user = await axios.post('http://localhost:5004/authenticate', {
-        email: 'cleytongama@gmail.com',
-        passwd: '123123'
-      })
-
-      token = user.data.data.token
-
-      localStorage.setItem('token-auth', token)
-    }
-    console.log(jwtDecoded(token))
-
-    const users = await axios.get('http://localhost:5004/users', {
-      headers: {
-        Authorization: 'Bearer ' + token
-      }
-    })
-    
-    console.log(users)
-  }
-
   render() {
     return (
-      <div className="App">
-        <h1>Hello React</h1>
-      </div>
+      <Provider store={store} className="App">
+        <h1>React Auth ...</h1>
+        <Router>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path='/' component={Public} />
+              <Route  path='/user' component={Restrito} />
+              <Route  path='/admin' component={Admin} />
+              <Route  path='/login' component={Login} />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

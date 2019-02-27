@@ -8,6 +8,9 @@ export const { Types, Creators } = createActions({
     signingRequest: ['email', 'password'],
     signingResponse: ['user'],
     signingFailure: ['error'],
+    
+    destroyAuthRequest: null,
+    destroyAuthResponse: null,
 
     authRequest: null,
     authResponse: ['user'],
