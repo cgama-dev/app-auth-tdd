@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
         name: DataTypes.STRING,
         email: DataTypes.STRING,
+        role: {
+            type: DataTypes.STRING,
+            default: 'user'
+        },
         password: {
             type: DataTypes.VIRTUAL
         },

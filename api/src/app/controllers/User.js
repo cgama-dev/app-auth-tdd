@@ -11,7 +11,7 @@ class UserController {
         }
 
         if (!(await user.checkPassword(password))) {
-            return res.status(401).send({ message: 'Incorrect Password', error: true })
+            return res.status(401).send({ message: 'Senha inválida', error: true })
         }
 
         return res.status(200).send({
