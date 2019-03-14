@@ -32,7 +32,8 @@ module.exports = (sequelize, DataTypes) => {
         return jsonwebtoken.sign({
             id: this.id,
             email: this.email,
-            name: this.name
+            name: this.name,
+            role: this.role
         }, process.env.JWT_TOKEN)
     }
 

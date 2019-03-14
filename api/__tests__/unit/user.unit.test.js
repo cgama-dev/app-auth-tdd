@@ -12,12 +12,13 @@ beforeEach(async () => {
     await cleanDB();
 });
 
-describe("MODULE::User", () => {
-    it("should encrypt user password", async () => {
+describe("TEST UNIT :: MODULE :: Authenticate", () => {
+    it("Deve criptografar a senha do usuário", async () => {
         const user = await User.create({
             name: "Cleyton",
             email: "cleytongama@gmail.com",
-            password: "123456"
+            password: "123456",
+            role: 'admin'
         });
 
         const compareHash = await bcrypt.compare("123456", user.password_hash);

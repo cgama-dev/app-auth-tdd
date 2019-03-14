@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon src/server --ignore __tests__",
+    "prestart:dev": "NODE_ENV=test sequelize db:migrate",
+    "start:dev": "NODE_ENV=test nodemon src/server --ignore __tests__",
     "start": "node src/server",
     "pretest": "NODE_ENV=test sequelize db:migrate",
     "test": "NODE_ENV=test  jest --verbose=true",
