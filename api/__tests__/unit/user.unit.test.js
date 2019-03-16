@@ -9,11 +9,11 @@ const cleanDB = () => {
 }
 
 beforeEach(async () => {
-    await cleanDB();
+    // await cleanDB();
 });
 
 describe("TEST UNIT :: MODULE :: Authenticate", () => {
-    it("Deve criptografar a senha do usuário", async () => {
+    test("Deve criptografar a senha do usuário", async () => {
         const user = await User.create({
             name: "Cleyton",
             email: "cleytongama@gmail.com",

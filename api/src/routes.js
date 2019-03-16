@@ -4,7 +4,8 @@ const UserController = require('./app/controllers/User')
 
 const { authorized, isAdmin } = require('./app/middlewares/auth')
 
-// routes.get('/users', UserController.query)
+routes.get('/users', UserController.query)
+
 routes.post('/users/authenticate', UserController.authenticate)
 
 routes.get('/users/dashboard', authorized, (req, res) => {

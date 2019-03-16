@@ -2,6 +2,7 @@ const jsonwebtoken = require('jsonwebtoken')
 
 const authorized = async (req, res, next) => {
 
+    console.log(req.headers.authorization)
     if (!req.headers.authorization || req.headers.authorization.indexOf("Bearer ") < 0) {
         return res.status(401).send({ message: 'Acesso restrito' })
     }

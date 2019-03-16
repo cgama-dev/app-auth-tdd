@@ -6,6 +6,8 @@ import { Redirect } from 'react-router-dom'
 
 import ActionCreators from './../../redux/actions'
 
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -37,17 +39,35 @@ class Login extends Component {
             return <Redirect to='/user' />
         }
         return (
-            <div>
-                {JSON.stringify(this.props)}
-                <input type="text" value={this.state.form.email} onChange={this.handleChange('email')} />
-                <input type="password" value={this.state.form.password} onChange={this.handleChange('password')} />
-                <button type="button" onClick={this.handleLogin}>Entrar</button>
+            <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+                <Grid.Column style={{ maxWidth: 450 }}>
+                    <br />
+                    <Header as='h2' color='violet' textAlign='center'>
+                        LOGIN :: AUTH
+                    </Header>
+                    <Form size='large'>
+                        <Segment stacked>
+                            <Form.Input fluid icon='user' value={this.state.form.email} onChange={this.handleChange('email')} iconPosition='left' placeholder='Informe seu E-mail' />
+                            <Form.Input
+                                fluid
+                                icon='lock'
+                                iconPosition='left'
+                                placeholder='Password'
+                                type='password'
+                                value={this.state.form.password} onChange={this.handleChange('password')}
+                            />
 
-                {
-                    this.props.auth.error &&
-                    <h1>{this.props.auth.errorMessagem}</h1>
-                }
-            </div>
+                            <Button color='violet' fluid size='large' onClick={this.handleLogin}>
+                                Entrar
+                            </Button>
+                        </Segment>
+                    </Form>
+                    {
+                        this.props.auth.error &&
+                        <Message negative>{this.props.auth.errorMessagem}</Message>
+                    }
+                </Grid.Column>
+            </Grid>
         )
     }
 }

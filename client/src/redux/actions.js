@@ -9,12 +9,15 @@ export const { Types, Creators } = createActions({
     signingResponse: ['user'],
     signingFailure: ['error'],
     
-    destroyAuthRequest: null,
-    destroyAuthResponse: null,
+    signupAuthRequest: null,
+    signupAuthResponse: null,
 
     authRequest: null,
     authResponse: ['user'],
-    authFailure: ['error']
+    authFailure: ['error'],
+
+
+
 
 })
 

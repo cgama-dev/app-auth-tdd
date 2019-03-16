@@ -12,7 +12,7 @@ export const INITIAL_STATE = {
 }
 
 export const signingRequest = (state = INITIAL_STATE, action) => {
-    
+
     return {
         ...state,
         isSigning: true,
@@ -61,22 +61,16 @@ export const authFailure = (state = INITIAL_STATE, action) => {
         errorMessagem: action.error
     }
 }
-export const destroyAuthRequest = (state = INITIAL_STATE, action) => {
+export const signupAuthRequest = (state = INITIAL_STATE, action) => {
     return {
         ...state,
-        isSigning: false,
-        error: false,
-        errorMessagem: ''
-    }
-}
-export const destroyAuthResponse = (state = INITIAL_STATE, action) => {
-    return {
-        ...state,
+        user: null,
         isSigning: false,
         isAuth: false,
-        user: null
+        error: false
     }
 }
+
 export const HANDLERS = {
     [Types.SIGNING_REQUEST]: signingRequest,
     [Types.SIGNING_RESPONSE]: signingResponse,
@@ -86,8 +80,7 @@ export const HANDLERS = {
     [Types.AUTH_RESPONSE]: authResponse,
     [Types.AUTH_FAILURE]: authFailure,
 
-    [Types.DESTROY_AUTH_REQUEST]: destroyAuthRequest,
-    [Types.DESTROY_AUTH_RESPONSE]: destroyAuthResponse
+    [Types.SIGNUP_AUTH_REQUEST]: signupAuthRequest
 }
 
 export default createReducer(INITIAL_STATE, HANDLERS)

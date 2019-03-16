@@ -1,16 +1,14 @@
 
-import { takeLatest, takeEvery,put } from 'redux-saga/effects'
+import { takeLatest, put } from 'redux-saga/effects'
 
-import { increment } from './basic'
-
-import { login, auth } from './auth'
+import { login, auth, logout } from './auth'
 
 import ActionsCreators from './../actions'
-
 
 //Function generate
 export default function* rootSaga() {
     yield takeLatest('SIGNING_REQUEST', login)
     yield takeLatest('AUTH_REQUEST', auth)
+    yield takeLatest('SIGNUP_AUTH_REQUEST', logout)
     yield put(ActionsCreators.authRequest())    
 }

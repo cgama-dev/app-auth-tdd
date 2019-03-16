@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">20% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>20/20</span>
+        <span class='fraction'>4/20</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">20% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>20/20</span>
+        <span class='fraction'>4/20</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,76 +89,76 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const jsonwebtoken = require('jsonwebtoken')
 &nbsp;
-const authorized = async (req, res, next) =&gt; {
+const authorized = <span class="fstat-no" title="function not covered" >as</span>ync (req, res, next) =&gt; {
 &nbsp;
-    if (!req.headers.authorization || req.headers.authorization.indexOf("Bearer ") &lt; 0) {
-        return res.status(401).send({ message: 'Acesso restrito' })
+<span class="cstat-no" title="statement not covered" >    if (!req.headers.authorization || req.headers.authorization.indexOf("Bearer ") &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        return res.status(401).send({ message: 'Acesso restrito' })</span>
     }
 &nbsp;
-    const token = req.headers.authorization.split("Bearer ").join("")
+    const token = <span class="cstat-no" title="statement not covered" >req.headers.authorization.split("Bearer ").join("")</span>
 &nbsp;
-    try {
-        await jsonwebtoken.verify(token, process.env.JWT_TOKEN)
-        return next()
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >        await jsonwebtoken.verify(token, process.env.JWT_TOKEN)</span>
+<span class="cstat-no" title="statement not covered" >        return next()</span>
     } catch (err) {
-        return res.status(401).send({ message: 'Token inválido' })
+<span class="cstat-no" title="statement not covered" >        return res.status(401).send({ message: 'Token inválido' })</span>
     }
 }
 &nbsp;
-const isAdmin = async (req, res, next) =&gt; {
+const isAdmin = <span class="fstat-no" title="function not covered" >as</span>ync (req, res, next) =&gt; {
 &nbsp;
-    if (!req.headers.authorization || req.headers.authorization.indexOf("Bearer ") &lt; 0) {
-        return res.status(401).send({ message: 'Acesso restrito' })
+<span class="cstat-no" title="statement not covered" >    if (!req.headers.authorization || req.headers.authorization.indexOf("Bearer ") &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        return res.status(401).send({ message: 'Acesso restrito' })</span>
     }
 &nbsp;
-    const token = req.headers.authorization.split("Bearer ").join("")
+    const token = <span class="cstat-no" title="statement not covered" >req.headers.authorization.split("Bearer ").join("")</span>
 &nbsp;
-    try {
-        const userDecoded = await jsonwebtoken.verify(token, process.env.JWT_TOKEN)
-        if (userDecoded.role === 'admin') {
-            return next()
+<span class="cstat-no" title="statement not covered" >    try {</span>
+        const userDecoded = <span class="cstat-no" title="statement not covered" >await jsonwebtoken.verify(token, process.env.JWT_TOKEN)</span>
+<span class="cstat-no" title="statement not covered" >        if (userDecoded.role === 'admin') {</span>
+<span class="cstat-no" title="statement not covered" >            return next()</span>
         } else {
-            return res.status(403).send({ message: 'Acesso restrito, você não possui permissão' })
+<span class="cstat-no" title="statement not covered" >            return res.status(403).send({ message: 'Acesso restrito, você não possui permissão' })</span>
         }
     } catch (error) {
-        return res.status(401).send({ message: 'Token inválido' })
+<span class="cstat-no" title="statement not covered" >        return res.status(401).send({ message: 'Token inválido' })</span>
     }
 &nbsp;
 }
@@ -169,7 +169,7 @@ module.exports = { authorized, isAdmin }</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 13 2019 23:49:41 GMT-0300 (Brasilia Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Mar 16 2019 00:21:44 GMT-0300 (Brasilia Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

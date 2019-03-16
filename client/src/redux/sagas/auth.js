@@ -5,11 +5,11 @@ import jwtDecoded from 'jwt-decode'
 
 export function* login(action) {
     try {
-        const response = yield axios.post('http://localhost:5004/authenticate', {
+        const response = yield axios.post('http://localhost:3002/users/authenticate', {
             email: action.email,
-            passwd: action.password
+            password: action.password
         })
-        const { token, user, error } = response.data.data
+        const { token, user } = response.data.data
         localStorage.setItem('token-auth', token)
         yield put(ActionsCretors.signingResponse(user))
     } catch (error) {
@@ -19,6 +19,11 @@ export function* login(action) {
         yield put(ActionsCretors.signingFailure(message))
     }
 
+}
+
+export function* logout() {
+    localStorage.removeItem('token-auth')
+    yield put(ActionsCretors.signupAuthResponse())
 }
 
 
@@ -35,6 +40,6 @@ export function* auth() {
             yield put(ActionsCretors.authFailure('Token inválido'))
         }
     } else {
-        yield put(ActionsCretors.authFailure('Não existe token'))
+        yield put(ActionsCretors.authFailure('Usuário não autenticado'))
     }
 }
